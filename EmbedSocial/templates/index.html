@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="pere">
+
+    </div>
+    <form action="/"   url="http://localhost:5000/" style="display: flex; flex-direction: column; justify-content: center; width: 300px; gap: 10px;">
+        <h1>Filter review</h1>
+    
+    <h2>Order by rating</h2>
+    <select name="orderByRating">
+        <option disabled selected value></option>
+        <option>Highest first</option>
+        <option>Lowest first</option>
+    </select>
+    <h2>Minimum rating</h2>
+    <select name="minimumRating">
+        <option disabled selected value></option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+    </select>
+    <h2>Order by date</h2>
+    <select name="orderByDate">
+        <option disabled selected value></option>
+        <option>Newest first</option>
+        <option>Oldest first</option>
+    </select>
+    <h2>Prioritize by text</h2>
+    <select name="prioritizeByText">
+        <option disabled selected value></option>
+        <option>Yes</option>
+        <option>No</option>
+    </select>
+    <button style="background-color: lightblue; font-size: 20px;">filter</button>
+</form>
+
+    <pre></pre>
+        {%for review in reviews%}
+       
+           
+        
+  
+    <div style="border: solid; border-color: red; border-width: 2px; width: 800px; height: 100px; display: flex; flex-direction: row; margin: 2px;">
+        <div style="display: flex;flex-direction: column; width: 200px; height: px; border: solid; border-width: 2px;">
+            <h3>ID</h1>
+                <h4>{{review["id"]}}</h2>
+        </div>
+        <div style="display: flex;flex-direction: column; width: 200px; border: solid; border-width: 2px">
+            <h3>Rating</h1>
+                <h4>{{review["rating"]}}</h2>
+        </div>
+      <div style="display: flex;flex-direction: column; width: 200px; border: solid; border-width: 2px">
+        <h3>Date</h1>
+            <h4>{{review["reviewCreatedOnDate"]}}</h2>
+      </div>
+      <div style="display: flex;flex-direction: column; width: 200px; border: solid; border-width: 2px">
+        <h3>Text</h1>
+            <h4>{{review["reviewText"]}}</h2>
+      </div>
+    </div>
+{%endfor%}
+
+
+</body>
+
+    <script>
+            
+    </script>
+</html>
